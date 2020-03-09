@@ -17,11 +17,12 @@ public class BankAccount {
 
     public void withDraw(int sum) throws LimitException { //снимает указанную сумму со счета
         if (getAmount()<sum) {
+            amount=amount-amount;
+            System.out.println("Остаток на счету " + amount);
             throw new LimitException("Недостаточно средств на счету", getAmount());
         } else {
-            System.out.println(amount=amount-sum);
-        }   if (getAmount()<sum){
-            System.out.println(amount=amount-amount);
+            amount=amount-sum;
+            System.out.println("Со счета снято " + sum);
         }
     }
 }
